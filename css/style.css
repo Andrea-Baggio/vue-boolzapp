@@ -29,3 +29,14 @@ html {
     transform: translate(-50%, -50%);
     height: 90%;
 }
+
+
+
+
+aside {
+    background-color: red;
+}
+
+main {
+    background-color: green;
+}

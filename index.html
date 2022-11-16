@@ -6,9 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
 
-        <!-- Bootstrap -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-
         <!-- font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,17 +23,25 @@
     </head>
     <body>
        <div class="big-container">
-            <div class="row">
-                <div class="green-header col col-12"></div>
-                <div class="gray-body col col-12"></div>
-            </div>
+            <div class="green-header"></div>
+            <div class="gray-body"></div>
 
-            <div id="app">
-                <div class="row">
-                    <div class="col col-8 bg-light main-area">
-                        <aside class="col col-4 h-100"></aside>
-                        <main class="col col-8 h-100"></main>
-                    </div>
+            <div id="app">                  
+                <div class="main-area">
+                    <aside>
+                        <div class="aside-top">
+                            <div class="user-info"></div>
+                            <div class="profile-icons">
+                                <i class="fa-solid fa-circle-notch"></i>
+                                <i class="fa-solid fa-message"></i>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
+                        </div>
+
+
+                        <!-- <div class="aside-body"></div> -->
+                    </aside>
+                    <main></main>
                 </div>
             </div>
        </div>

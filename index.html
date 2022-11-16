@@ -26,13 +26,13 @@
             <div class="green-header"></div>
             <div class="gray-body"></div>
 
-            <div id="app">                  
+            <div id="root">                  
                 <div class="main-area">
                     <aside>
                         <div class="aside-top">
                             <div class="user-info">
-                                foto
-                                nome
+                                <img src="img/avatar_io.jpg" alt="">
+                                <div class="user-name">Sofia</div>                                
                             </div>
                             <div class="profile-icons">
                                 <i class="fa-solid fa-circle-notch"></i>
@@ -49,9 +49,19 @@
                             </span>
                         </div>
 
+                        <!-- qua ci va il form per cercare un contatto -->
 
-                        <!-- <div class="aside-body"></div> -->
+                        <div class="aside-main">
+                            <ul>
+                                <li v-for="element in contacts">      
+                                    {{ element.name }}
+                                    {{ element.avatar }}
+                                    <hr>
+                                </li> 
+                            </ul>
+                        </div>
                     </aside>
+
                     <main></main>
                 </div>
             </div>

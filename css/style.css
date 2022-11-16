@@ -13,6 +13,16 @@ i {
     color: rgb(164, 164, 164);
 }
 
+img {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+}
+
+li {
+    list-style: none;
+}
+
 .big-container {
     position: relative;
     max-width: 1500px;
@@ -60,6 +70,13 @@ main {
     align-items: center;
     background-color: rgb(234, 234, 234);
     border-right: 2px solid rgb(198, 198, 198);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: .9em;
 }
 
 .aside-notification {

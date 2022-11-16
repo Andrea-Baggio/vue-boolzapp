@@ -8,6 +8,11 @@ html {
     font-family: 'Roboto', sans-serif;
 }
 
+i {
+    padding: 0 .3rem;
+    color: rgb(164, 164, 164);
+}
+
 .big-container {
     position: relative;
     max-width: 1500px;
@@ -35,7 +40,7 @@ html {
 }
 
 aside {
-    width: 300px;
+    width: 400px;
     height: 100%;
     background-color: rgb(233, 233, 233);
 }
@@ -45,4 +50,41 @@ main {
     height: 100%;
     background-image: url('../img/mine.jpg');
     background-size: contain;
+}
+
+.aside-top {
+    height: 10%;
+    padding: .5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(234, 234, 234);
+    border-right: 2px solid rgb(198, 198, 198);
+}
+
+.aside-notification {
+    height: 10%;
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+    background-color: rgb(142, 218, 252);
+}
+
+.aside-notification i {
+    margin-left: .7rem;
+    color: rgb(142, 218, 252);
+    padding: .7rem .6rem;
+    border: 1px solid white;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.aside-text {
+    margin-left: 1rem;
+    font-size: .9em;
+}
+
+.aside-text a {
+    font-size: .8em;
+    color: gray;    
 }

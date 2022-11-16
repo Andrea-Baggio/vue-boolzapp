@@ -7,3 +7,25 @@
 html {
     font-family: 'Roboto', sans-serif;
 }
+
+.big-container {
+    position: relative;
+}
+
+.green-header {
+    height: 100px;
+    background-color: rgb(0, 150, 136);
+}
+
+.gray-body {
+    height: calc(100vh - 110px);
+    background-color: rgb(217, 219, 212);
+}
+
+.main-area {
+    position: absolute;
+    top: 50%;  
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    height: 90%;
+}

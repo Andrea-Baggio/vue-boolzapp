@@ -59,16 +59,19 @@ main {
     width: 700px;    
     height: 100%;
     background-image: url('../img/mine.jpg');
-    background-size: contain;
+    background-size: auto;
 }
 
-.aside-top {
+.aside-top, .main-top {
     height: 10%;
     padding: .5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: rgb(234, 234, 234);
+}
+
+.aside-top {
     border-right: 2px solid rgb(198, 198, 198);
 }
 
@@ -104,4 +107,50 @@ main {
 .aside-text a {
     font-size: .8em;
     color: gray;    
+}
+
+.aside-main {
+    overflow-y: scroll;
+    height: calc(100% - 20%);
+    background-color: white;
+}
+
+.contacts-list {
+    display: flex;
+    align-items: center;
+    padding: .8rem 0 .8rem 1rem;
+    gap: .5rem;
+}
+
+.contacts-list:hover {
+    cursor: pointer;
+    background-color: rgb(234, 234, 234);
+}
+
+main {
+    position: relative;
+}
+
+.main-bottom {
+    background-color: rgb(229, 221, 213);
+    height: 9%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.send-message input {
+    height: 40px;
+    width: 550px;
+    border: none;
+    border-radius: 5px;
+    padding: 0 .6rem;
+}
+
+.main-bottom i {
+    color: gray;
 }

@@ -109,9 +109,22 @@ main {
     color: gray;    
 }
 
+.search-contact-container {
+    padding: 0 1rem;
+    height: 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search-contact {
+    width: 380px;
+    height: 30px;
+}
+
 .aside-main {
     overflow-y: auto;
-    height: calc(100% - 20%);
+    height: calc(100% - 20% - 7%);
     background-color: white;
 }
 

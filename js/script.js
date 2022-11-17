@@ -167,6 +167,7 @@ const app = new Vue({
     },
 
     methods: {
+        //A QUESTA FUNZIONE DEVO ANCHE DARE IL POTERE DI FAR APPARIRE IL NOME E LA FOTO DEL CONTATTO SELEZIONATO IN ALTO A SINISTRA DELLA CHAT
     showContact: function () {
         console.log();
         }

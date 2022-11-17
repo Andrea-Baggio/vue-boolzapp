@@ -110,7 +110,7 @@ main {
 }
 
 .aside-main {
-    overflow-y: scroll;
+    overflow-y: auto;
     height: calc(100% - 20%);
     background-color: white;
 }
@@ -129,6 +129,23 @@ main {
 
 main {
     position: relative;
+}
+
+.main-main {
+    height: calc(100vh - 30%);
+    overflow-y: auto;
+}
+
+.message-sended {
+    height: 100px;
+    width: 200px;
+    background-color: rgb(213, 249, 186);
+}
+
+.message-received {
+    height: 100px;
+    width: 200px;
+    background-color: white;
 }
 
 .main-bottom {

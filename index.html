@@ -16,6 +16,9 @@
 
         <!-- style -->
         <link rel="stylesheet" href="css/style.css">
+        <!-- <style v-cloak>
+            [v-cloak] { display: none }
+        </style> -->
 
         <!-- Js -->
         <script src="https://cdn.jsdelivr.net/npm/vue@2.7.13/dist/vue.js" defer></script>
@@ -49,7 +52,7 @@
                             </span>
                         </div>
 
-                        <!-- qua ci va il form per cercare un contatto -->
+                        <!-- qua ci va il form per cercare un contatto, perciò andrà ritoccata l'altezza del aside-main -->
 
                         <div class="aside-main">
                             <ul>
@@ -57,6 +60,7 @@
                                     <div class="contacts-list">
                                         <img :src="'img/avatar'+ element.avatar+'.jpg'">      
                                         {{ element.name }}
+                                        <!-- <span v-for="element in messages">{{ element.date }}</span> -->
                                     </div>
                                     <hr>
                                 </li> 
@@ -85,6 +89,9 @@
                                 </li> 
                             </ul>
                             -->
+
+                            <!-- <div class="message-received"></div>
+                            <div class="message-sended"></div> -->
                         </div>
 
                         <div class="main-bottom">

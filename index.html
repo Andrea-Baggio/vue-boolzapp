@@ -56,7 +56,7 @@
 
                         <div class="aside-main">
                             <ul>
-                                <li v-for="element in contacts">
+                                <li @click="showContact" v-for="element in contacts">
                                     <div class="contacts-list">
                                         <img :src="'img/avatar'+ element.avatar+'.jpg'">      
                                         {{ element.name }}

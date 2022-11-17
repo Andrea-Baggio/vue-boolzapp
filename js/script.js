@@ -167,6 +167,8 @@ const app = new Vue({
     },
 
     methods: {
-
+    showContact: function (event) {
+        console.log('yes');
+        }
     }
 }) 

@@ -120,11 +120,17 @@ main {
     align-items: center;
     padding: .8rem 0 .8rem 1rem;
     gap: .5rem;
+    border-bottom: 1px solid gray;
 }
 
 .contacts-list:hover {
     cursor: pointer;
     background-color: rgb(234, 234, 234);
+}
+
+.last-message {
+    color: gray;
+    font-size: .8em;
 }
 
 main {

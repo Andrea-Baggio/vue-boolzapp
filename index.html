@@ -58,11 +58,15 @@
                             <ul>
                                 <li @click="showContact">
                                     <div v-for="(element, index) in contacts" class="contacts-list">
-                                        <img :src="'img/avatar'+ element.avatar+'.jpg'">      
-                                        <h4>{{ element.name }}</h4>
-                                        <div class="last-message">{{ element.messages[element.messages.length - 1].message }}</div>                                        
+                                        <img :src="'img/avatar'+ element.avatar+'.jpg'">  
+                                        <div class="contact-info">
+                                            <h4>{{ element.name }}</h4>
+                                            <div class="last-message">
+                                                {{ element.messages[element.messages.length - 1].message }}
+                                            </div>  
+                                        </div>
+                                                                      
                                     </div>
-                                    <hr>
                                 </li> 
                             </ul>
                         </div>

@@ -56,11 +56,11 @@
 
                         <div class="aside-main">
                             <ul>
-                                <li @click="showContact" v-for="element in contacts">
-                                    <div class="contacts-list">
+                                <li @click="showContact">
+                                    <div v-for="(element, index) in contacts" class="contacts-list">
                                         <img :src="'img/avatar'+ element.avatar+'.jpg'">      
-                                        {{ element.name }}
-                                        <!-- <span v-for="element in messages">{{ element.date }}</span> -->
+                                        <h4>{{ element.name }}</h4>
+                                        <div class="last-message">{{ element.messages[element.messages.length - 1].message }}</div>                                        
                                     </div>
                                     <hr>
                                 </li> 
@@ -91,7 +91,8 @@
                             -->
 
                             <!-- <div class="message-received"></div>
-                            <div class="message-sended"></div> -->
+                            <div class="message-sended"></div> 
+                            QUA VANNO LI, NON DIV-->
                         </div>
 
                         <div class="main-bottom">

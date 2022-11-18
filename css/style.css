@@ -160,6 +160,12 @@ main {
     position: relative;
 }
 
+.selected-contact {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
 .main-main {
     height: calc(100vh - 30%);
     overflow-y: auto;
@@ -173,12 +179,12 @@ main {
     font-size: .9em;
     padding: 1rem;
     max-width: 45%;
-    min-width: 45%; 
+    min-width: 40%; 
     flex: 0 1 auto;
     border-radius: .5rem;
     position: relative;
     overflow-wrap: break-word;
-    padding-bottom: 1.3rem;
+    padding-bottom: 1rem;
 }
 
 .message-sent {

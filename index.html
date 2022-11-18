@@ -85,8 +85,8 @@
                     <main>
                         <div class="main-top">
                             <div class="selected-contact">
-                                foto
-                                nome                               
+                                <img :src="'img/avatar' + contacts[activeIndex].avatar + '.jpg'"> 
+                                <div>{{contacts[activeIndex].name}}</div>                              
                             </div>
                             <div class="chat-icons">
                                 <i class="fa-solid fa-magnifying-glass"></i>

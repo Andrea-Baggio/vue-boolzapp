@@ -52,8 +52,8 @@ const app = new Vue({
             visible: true,
             messages: [
             {
-            date: '28/03/2020 10:10:40',
-            message: 'La Marianna va in campagna',
+            date: '28/03/2027 10:10:40',
+            message: 'Marianna va in campagna',
             status: 'received'
             },
             {

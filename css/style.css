@@ -163,17 +163,26 @@ main {
 .main-main {
     height: calc(100vh - 30%);
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 4rem;
+}
+
+.message {
+    padding: 1rem;
+    max-width: 45%;
+    min-width: 45%; 
+    flex: 0 1 auto;
+    border-radius: .5rem;
 }
 
 .message-sended {
-    height: 100px;
-    width: 200px;
+    align-self: flex-end;
     background-color: rgb(213, 249, 186);
 }
 
 .message-received {
-    height: 100px;
-    width: 200px;
+    align-self: flex-start;
     background-color: white;
 }
 

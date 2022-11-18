@@ -177,6 +177,8 @@ main {
     flex: 0 1 auto;
     border-radius: .5rem;
     position: relative;
+    overflow-wrap: break-word;
+    padding-bottom: 1.3rem;
 }
 
 .message-sended {
@@ -212,7 +214,7 @@ main {
     right: 0;
     box-shadow: 1px 1px 4px black;;
     background-color: white;
-
+    z-index: 9;
 
     display: none;
 }

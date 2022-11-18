@@ -64,7 +64,7 @@
 
                         <div class="aside-main">
                             <ul>
-                                <li @click="showContact">
+                                <li>
                                     <div v-for="(element, index) in contacts" class="contacts-list">
                                         <img :src="'img/avatar'+ element.avatar+'.jpg'">  
                                         <div class="contact-info">
@@ -96,10 +96,10 @@
                         </div>
                         
                         <div class="main-main">
-                            <div class="message message-received">
-                                messaggio ricevuto
+                            <div v-for="element in contacts[activeIndex].messages" class="message message-received">
+                                {{ element.message }}
                                 <div class="last-message hours">
-                                    10:20:09
+                                    {{ element.date }}
                                 </div>
                                 <div class="main-symbol">
                                     <i class="fa-solid fa-chevron-down"></i>
@@ -109,19 +109,6 @@
                                     <li>Delete message</li>
                                 </ul>
                             </div>
-                            <div class="message message-sended">
-                                messaggio inviato
-                                <div class="last-message hours">
-                                    10:20:09
-                                </div>
-                                <div class="main-symbol">
-                                    <i class="fa-solid fa-chevron-down"></i>
-                                </div>
-                                <ul class="drop-down-menu">
-                                    <li>Message info</li>
-                                    <li>Delete message</li>
-                                </ul>
-                            </div> 
                         </div>
 
                         <div class="main-bottom">

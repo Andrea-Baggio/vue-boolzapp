@@ -55,10 +55,12 @@
                         </div>
                         <div class="search-contact-container">
                             <label for="search-contact">
-                                <input type="text" name="search-contact" id="search-contact" placeholder="&#x1F50E; Cerca o inizia una nuova chat">
+                                <input type="text" name="search-contact" id="search-contact" placeholder="Cerca o inizia una nuova chat">
+
+                                <!--PER IL SEARCH GUARDA QUA 
+                                    https://blog.logrocket.com/create-search-bar-vue/ -->
                             </label>
                         </div>
-                        <!-- qua ci va il form per cercare un contatto, perciò andrà ritoccata l'altezza del aside-main -->
 
                         <div class="aside-main">
                             <ul>
@@ -67,10 +69,12 @@
                                         <img :src="'img/avatar'+ element.avatar+'.jpg'">  
                                         <div class="contact-info">
                                             <h4>{{ element.name }}</h4>
+                                            
                                             <div class="last-message">
                                                 {{ element.messages[element.messages.length - 1].message }}
                                             </div>  
                                         </div>
+                                        <span class="last-message chat-date">{{ element.messages[element.messages.length - 1].date }}</span>
                                                                       
                                     </div>
                                 </li> 

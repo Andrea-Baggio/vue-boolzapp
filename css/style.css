@@ -166,14 +166,17 @@ main {
     display: flex;
     flex-direction: column;
     padding: 3rem 4rem;
+    gap: 1rem;
 }
 
 .message {
+    font-size: .9em;
     padding: 1rem;
     max-width: 45%;
     min-width: 45%; 
     flex: 0 1 auto;
     border-radius: .5rem;
+    position: relative;
 }
 
 .message-sended {
@@ -184,6 +187,43 @@ main {
 .message-received {
     align-self: flex-start;
     background-color: white;
+}
+
+.hours {
+    position: absolute;
+    bottom: 3px;
+    right: 5px;
+}
+
+.main-symbol {
+    position: absolute;
+    top: 5px;
+    right: 0;
+}
+
+.main-symbol i:hover {
+    cursor: pointer;
+    color: black;
+}
+
+.drop-down-menu {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    box-shadow: 1px 1px 4px black;;
+    background-color: white;
+
+
+    display: none;
+}
+
+.drop-down-menu li {
+    padding: .4rem 0;
+}
+
+.drop-down-menu li:hover {
+    cursor: pointer;
+    background-color: lightgray;
 }
 
 .main-bottom {

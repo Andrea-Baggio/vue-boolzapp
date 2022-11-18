@@ -181,7 +181,7 @@ main {
     padding-bottom: 1.3rem;
 }
 
-.message-sended {
+.message-sent {
     align-self: flex-end;
     background-color: rgb(213, 249, 186);
 }

@@ -96,7 +96,7 @@
                         </div>
                         
                         <div class="main-main">
-                            <div v-for="element in contacts[activeIndex].messages" class="message message-received">
+                            <div v-for="element in contacts[activeIndex].messages" class="message" :class="'message-' + element.status">
                                 {{ element.message }}
                                 <div class="last-message hours">
                                     {{ element.date }}

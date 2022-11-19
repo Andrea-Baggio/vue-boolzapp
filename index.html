@@ -65,7 +65,7 @@
                         <div class="aside-main">
                             <ul>
                                 <li>
-                                    <div v-for="(element, index) in contacts" class="contacts-list">
+                                    <div @click="showContact(index)" v-for="(element, index) in contacts" class="contacts-list">
                                         <img :src="'img/avatar'+ element.avatar+'.jpg'">  
                                         <div class="contact-info">
                                             <h4>{{ element.name }}</h4>

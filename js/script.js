@@ -166,11 +166,9 @@ const app = new Vue({
         ],   
         activeIndex : 0,
     },
-
     methods: {
-        //A QUESTA FUNZIONE DEVO ANCHE DARE IL POTERE DI FAR APPARIRE IL NOME E LA FOTO DEL CONTATTO SELEZIONATO IN ALTO A SINISTRA DELLA CHAT
-    showContact: function () {
-        console.log();
+    showContact (index) {
+        this.activeIndex = index;
         }
     }
 }) 

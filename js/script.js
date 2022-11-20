@@ -165,10 +165,20 @@ const app = new Vue({
         }
         ],   
         activeIndex : 0,
+        userMessage: '',
     },
     methods: {
-    showContact (index) {
-        this.activeIndex = index;
+    showContact (i) {
+        this.activeIndex = i;
         }
+    },
+
+    sendMessage () {
+        let myMessage = {
+            date: 'Now',
+            message: this.userMessage,
+            status: 'sent',
+        };
+        this.contacts[this.activeIndex].messages.push(myMessage);
     }
 }) 

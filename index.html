@@ -1,129 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
 
-        <!-- font -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Boolzapp</title>
 
-        <!-- font-awesome -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+	<!-- fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 
-        <!-- style -->
-        <link rel="stylesheet" href="css/style.css">
-        <style>
-            [v-cloak] { 
-                display: none 
-            }
-        </style>
+	<!-- font-awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-        <!-- Js -->
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.13/dist/vue.js" defer></script>
-	    <script src="js/script.js" defer></script>
-    </head>
-    <body>
-       <div class="big-container">
-            <div class="green-header"></div>
-            <div class="gray-body"></div>
+	<!-- styles -->
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		[v-cloak] {
+			display: none;
+		}
+	</style>
 
-            <div v-cloak id="root">                  
-                <div class="main-area">
-                    <aside>
-                        <div class="aside-top">
-                            <div class="user-info">
-                                <img src="img/avatar_io.jpg" alt="">
-                                <div class="user-name">Sofia</div>                                
-                            </div>
-                            <div class="profile-icons">
-                                <i class="fa-solid fa-circle-notch"></i>
-                                <i class="fa-solid fa-message"></i>
-                                <i class="fa-solid fa-ellipsis-vertical"></i>
-                            </div>
-                        </div>
+	<!-- luxon library for formatting dates -->
+	<script src="https://cdn.jsdelivr.net/npm/luxon@3.1.0/build/global/luxon.min.js" defer></script>
 
-                        <div class="aside-notification"> 
-                            <i class="fa-solid fa-bell-slash"></i>
-                            <span class="aside-text">
-                                Ricevi notifiche di nuovi messaggi <br>
-                                <a href="#">Attiva notifiche desktop</a>
-                            </span>
-                        </div>
-                        <div class="search-contact-container">
-                            <label for="search-contact">
-                                <input type="text" name="search-contact" id="search-contact" placeholder="Cerca o inizia una nuova chat">
+	<!-- vue -->
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.7.13/dist/vue.js" defer></script>
+	<script src="js/script.js" defer></script>
+</head>
 
-                                <!--PER IL SEARCH GUARDA QUA 
-                                    https://blog.logrocket.com/create-search-bar-vue/ -->
-                            </label>
-                        </div>
+<body>
+	<div
+		id="app"
+		class="container"
+		v-cloak
+		@click="toggleMenu(null, $event)"
+	>
+		<div class="area-left">
+			<div class="user-info">
+				<img class="avatar-user" src="img/avatar_io.jpg" alt="User avatar">
+				<span class="username">Anna</span>
+				<i class="fas fa-circle-notch"></i>
+				<i class="fas fa-comment-alt"></i>
+				<i class="fas fa-ellipsis-v"></i>
+			</div>
 
-                        <div class="aside-main">
-                            <ul>
-                                <li>
-                                    <div @click="showContact(index)" v-for="(element, index) in contacts" class="contacts-list">
-                                        <img :src="'img/avatar'+ element.avatar+'.jpg'">  
-                                        <div class="contact-info">
-                                            <h4>{{ element.name }}</h4>
-                                            
-                                            <div class="last-message">
-                                                {{ element.messages[element.messages.length - 1].message }}
-                                            </div>  
-                                        </div>
-                                        <span class="last-message chat-date">{{ element.messages[element.messages.length - 1].date }}</span>
-                                                                      
-                                    </div>
-                                </li> 
-                            </ul>
-                        </div>
-                    </aside>
+			<div class="notifications">
+				<div class="bell">
+					<i class="fa fa-bell-slash"></i>
+				</div>
 
-                    <main>
-                        <div class="main-top">
-                            <div class="selected-contact">
-                                <img :src="'img/avatar' + contacts[activeIndex].avatar + '.jpg'"> 
-                                <div>{{contacts[activeIndex].name}}</div>                              
-                            </div>
-                            <div class="chat-icons">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                                <i class="fa-solid fa-paperclip"></i>
-                                <i class="fa-solid fa-ellipsis-vertical"></i>
-                            </div>
-                        </div>
-                        
-                        <div class="main-main">
-                            <div v-for="element in contacts[activeIndex].messages" class="message" :class="'message-' + element.status">
-                                {{ element.message }}
-                                <div class="last-message hours">
-                                    {{ element.date }}
-                                </div>
-                                <div class="main-symbol">
-                                    <i class="fa-solid fa-chevron-down"></i>
-                                </div>
-                                <ul class="drop-down-menu">
-                                    <li>Message info</li>
-                                    <li>Delete message</li>
-                                </ul>
-                            </div>
-                        </div>
+				<div>
+					Ricevi notifiche di nuovi messaggi <br>
+                    <a href="#">Attiva notifiche desktop</a>
+				</div>
+			</div>
 
-                        <div class="main-bottom">
-                            <i class="fa-regular fa-face-smile"></i>
-                            <div class="send-message">
-                                <input type="text" name="" id="" 
-                                placeholder="Scrivi un messaggio" 
-                                v-model="userMessage" 
-                                @keyup.enter="sendMessage">
-                            </div>
-                            <i class="fa-solid fa-microphone"></i>
-                        </div>
-                    </main>
-                </div>
-            </div>
-       </div>
-    </body>
+			<div class="search-contact-container">
+				<div class="search-contact">
+					<input
+					type="text"
+					placeholder="Cerca chat"
+					v-model="searchString"
+				>
+				</div>
+				
+			</div>
+
+			<div class="contacts">
+				<div
+					v-for="(contact, i) in filteredContacts"
+					:key="contact.avatar"
+					class="contact"
+					@click="setActiveIndex(i)"
+					@dblclick="deleteContact(i)"
+				>
+					<div class="contact-image">
+						<img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
+					</div>
+					
+					<div class="details">
+						<div class="first-line">
+							<div class="username">{{ contact.name }}</div>
+						</div>
+						<div class="date">{{ contact.messages.length ? contact.messages[contact.messages.length - 1].date : '' }}</div>
+						<div class="second-line">
+							{{ contact.messages.length ? contact.messages[contact.messages.length - 1].message : '' }}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="area-right">
+			<div v-if="activeIndex === null">
+			</div>
+			<div v-else-if="contacts.length">
+				<div class="user-info">
+					<div class="user-info-image">
+						<img class="avatar-user" :src="'img/avatar' + contacts[activeIndex].avatar + '.jpg'" :alt="contacts[activeIndex].name">
+					</div>
+					
+					<span class="username">{{ contacts[activeIndex].name }}</span>
+					<i class="fas fa-search"></i>
+					<i class="fas fa-paperclip"></i>
+					<i class="fas fa-ellipsis-v"></i>
+				</div>
+
+				<div class="messages">
+					<div
+						v-for="(objMessage, i) in contacts[activeIndex].messages"
+						class="message"
+						:class="'message-' + objMessage.status"
+					>
+						{{ objMessage.message }}
+						<div class="sent-date">{{ objMessage.date }}</div>
+
+						<i
+							class="fa-solid fa-chevron-down message-menu-toggler drop-down-menu"
+							@click="toggleMenu(i)"
+						></i>
+
+						<ul
+							v-if="activeMenu === i"
+							class="message-menu"
+							@click="toggleMenu(i)"
+						>
+							<li>Info messaggio</li>
+							<li @click="deleteMessage(i)">Cancella messaggio</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="message-bar">
+					<input type="text" placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="sendMessage">
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
 </html>
